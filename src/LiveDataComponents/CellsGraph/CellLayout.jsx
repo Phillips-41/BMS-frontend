@@ -59,21 +59,21 @@ const CellLayout = ({ cellData, thresholds, chargingStatus, siteId, serialNumber
     }
   
     // 2. Voltage Conditions
-    if (cellVoltage >= HighVoltage) {
+    if (cellVoltage >= parseFloat(HighVoltage)) {
       return "High Voltage";
     }
-    if (cellVoltage <= OpenBattery) {
+    if (cellVoltage <= parseFloat(OpenBattery)) {
       return "Open Battery";
     }
-    if (cellVoltage <= BatteryAboutToDie) {
+    if (cellVoltage <= parseFloat(BatteryAboutToDie)) {
       return "UT to Die";
     }
-    if (cellVoltage <= LowVoltage) {
+    if (cellVoltage <= parseFloat(LowVoltage)) {
       return "Low Voltage";
     }
   
     // 3. Temperature Condition
-    if (cellTemperature >= HighTemperature) {
+    if (cellTemperature >= parseFloat(HighTemperature)) {
       return "High Temperature";
     }
   
